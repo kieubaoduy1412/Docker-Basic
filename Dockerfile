@@ -1,7 +1,5 @@
 FROM ubuntu:16.04
 
-MAINTAINER DuyKB<kieubaoduy1412@gmail.com>
-
 RUN apt-get update
 
 RUN apt-get install -y nginx
@@ -11,6 +9,8 @@ RUN echo "mysql-server mysql-server/root_password password root" | debconf-set-s
     && apt-get install -y mysql-server
 
 WORKDIR /venv
+
+COPY webroot/index.html /var/www/html/
 
 COPY start.sh /venv
 
