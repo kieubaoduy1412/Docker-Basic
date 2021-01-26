@@ -10,8 +10,6 @@ RUN echo "mysql-server mysql-server/root_password password root" | debconf-set-s
 
 WORKDIR /venv
 
-RUN rm /var/www/html/index.html
-
 COPY webroot/index.html /var/www/html/index.html
 
 COPY start.sh /venv
